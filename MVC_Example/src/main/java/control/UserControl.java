@@ -5,7 +5,6 @@
  */
 package control;
 
-//import java.io.PrintWriter;
 import model.UserModel;
 import mvc_example.Main;
 
