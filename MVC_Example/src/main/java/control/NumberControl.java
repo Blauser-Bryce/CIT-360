@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 package control;
-
 import java.util.Random;
+
 import model.NumberModel;
-import mvc_example.Main;
+import view.GuessView;
+
 
 /**
  *
@@ -15,20 +16,33 @@ import mvc_example.Main;
  */
 
 public class NumberControl {
-        
-    public String guessNumber (Integer choice) {
+    
+    private Integer intChoice;
                 
-        NumberModel num = new NumberModel();
+    public void guessNumber (String choice) {
         
-        Random random = new Random();
+        choice = choice.toUpperCase(); // convert to upper
         
-        num.setNumber(random.nextInt(10) + 1);
-        Main.setNumber(num);
+        GuessView view = new GuessView();
         
-        if (choice == num.getNumber()) {
-            return "Correct!  You guessed my number.";
-        } 
+        if (choice.matches("[1-9]|10")) {
+            intChoice = Integer.parseInt(choice);
+                
+            NumberModel num = new NumberModel();
+
+            Random random = new Random();
+
+            num.setNumber(random.nextInt(10) + 1);
+
+            if (intChoice == num.getNumber()) {
+                view.displayResult("Correct!  You guessed my number.");
+                return;
+            } 
+
+            view.displayResult("Sorry, you guessed [" + choice + "], but my number was [" + num.getNumber() + "]");
+        } else {
+            view.displayResult("\n*** Invalid selection.  Must be between 1 and 10. *** Try again");
+        }
         
-        return "Sorry, you guessed [" + choice + "], but my number was [" + num.getNumber() + "]";
     }
 }
