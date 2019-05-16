@@ -12,9 +12,7 @@ import control.NumberControl;
  * @author Bryce Blauser
  */
 public class GuessView extends View {
-    
-    String result;
-    
+        
     public GuessView() {
         super("\n"
                 + "\n----------------------------------"
@@ -27,23 +25,14 @@ public class GuessView extends View {
     @Override
     public boolean doAction(String choice) {
         
-        choice = choice.toUpperCase(); // converto to upper
+        NumberControl numberControl = new NumberControl();
         
-        if (choice.matches("[1-9]|10")) {
-            //console.println(choice); 
-            this.guess(choice);
-        } else {
-            console.println("\n*** Invalid selection.  Must be between 1 and 10. *** Try again");
-        }
-        
+        numberControl.guessNumber(choice);
         return false;
     }
     
-    private void guess(String choice) {
-        
-        NumberControl numberControl = new NumberControl();
-        result = numberControl.guessNumber(Integer.parseInt(choice));
-        
+    public void displayResult(String result)
+    {
         console.println(result);
     }
     

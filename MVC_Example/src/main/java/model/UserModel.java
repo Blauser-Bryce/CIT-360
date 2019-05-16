@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package model;
+import mvc_example.Main;
 
 /**
  *
@@ -19,11 +20,12 @@ public class UserModel {
     }
     
     public String getName() {
-        return name;
+        return Main.getUser().name;
     }
 
     public void setName(String name) {
         this.name = name;
+        Main.setUser(this); // set the user
     }
     
 }

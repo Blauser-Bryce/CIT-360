@@ -17,7 +17,7 @@ public class StartProgramView extends View {
      
     public StartProgramView() {
         // prompt message and display banner        
-        super("\nPlease enter your name: ");
+        super("\nPlease enter your name (X to quit): ");
             
         // Display the banner
         this.displayBanner();
@@ -33,27 +33,13 @@ public class StartProgramView extends View {
 
     @Override
     public boolean doAction(String value) {
-        if (value.length() < 2) {
-            console.println("\nInvalid user name:"
-                    + "The name must be greater than one character in length");
-            return false;
-        }
+        UserControl userControl = new UserControl();   
         
-        // call createUser() control function
-        if (UserControl.createUser(value) == null) { // if unsuccessful
-            console.println("\nError creating user.");
-            return false;
-        }
-        
-        user = UserControl.getUserName();
-        
-        // display next view
-        this.displayNextView(user);
-        
-        return true;
+        userControl.checkEntry(value);
+        return false;
     }
     
-    private void displayNextView(String user) {
+    public void displayNextView(String user) {
         console.println("\n========================================="
                          + "\n Welcome to the MVC example " + user
                          + "\n=========================================");
@@ -64,5 +50,10 @@ public class StartProgramView extends View {
         // Display the main menu view
         mainMenuView.display();
                 
+    }
+    
+    public void displayResult(String result)
+    {
+        console.println(result);
     }
 }

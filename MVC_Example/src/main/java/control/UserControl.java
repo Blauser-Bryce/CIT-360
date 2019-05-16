@@ -6,7 +6,7 @@
 package control;
 
 import model.UserModel;
-import mvc_example.Main;
+import view.StartProgramView;
 
 /**
  *
@@ -14,7 +14,29 @@ import mvc_example.Main;
  */
 
 public class UserControl {
+    
+    public boolean checkEntry (String value){
         
+        StartProgramView view = new StartProgramView();
+        
+        if (value.length() < 2) {
+            view.displayResult("\nInvalid user name:"
+                    + "The name must be greater than one character in length");
+            return false;
+        }
+        
+        // call createUser() control function
+        if (this.createUser(value) == null) { // if unsuccessful
+            view.displayResult("\nError creating user.");
+            return false;
+        }
+                
+        // display next view
+        view.displayNextView(this.getUserName());
+        return true;
+    }
+    
+    
     public static UserModel createUser(String name) {
         
         if (name == null) {
@@ -23,13 +45,13 @@ public class UserControl {
         
         UserModel user = new UserModel();
         user.setName(name);
-        Main.setUser(user); // set the user
-        
+
         return user;
     }
     
     public static String getUserName() {
-        return Main.getUser().getName();
+        UserModel user = new UserModel();
+        return user.getName();
     }
     
 }

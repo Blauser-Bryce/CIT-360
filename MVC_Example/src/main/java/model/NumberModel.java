@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package model;
+import mvc_example.Main;
 
 /**
  *
@@ -22,5 +23,6 @@ public class NumberModel {
 
     public void setNumber(Integer number) {
         this.number = number;
+        Main.setNumber(this);
     }
 }
