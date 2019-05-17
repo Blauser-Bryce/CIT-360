@@ -1,0 +1,15 @@
+{
+	'students' :
+	[
+		{
+			'firstname': 'Bryce',
+			'lastname': 'Blauser',
+			'assignments': ['MVC Architecture', 'QCJSON / JSON']
+		},
+		{
+			'firstname': 'Test',
+			'lastname': 'McTesterson',
+			'assignments': ['Sample Data', 'More Sample Data']
+		}
+	]
+}

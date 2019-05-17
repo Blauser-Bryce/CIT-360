@@ -1,0 +1,92 @@
+{
+  'assignments': [
+    {
+      'id': 1,
+      'name': 'Java Collections'
+    },
+    {
+      'id': 2,
+      'name': 'Threads, Executor, and Runnables'
+    },
+	{
+      'id': 3,
+      'name': 'MVC Architecture'
+    },
+    {
+      'id': 4,
+      'name': 'Application Controller Pattern'
+    },
+    {
+      'id': 5,
+      'name': 'Hibernate'
+    },
+    {
+      'id': 6,
+      'name': 'QCJSON / JSON'
+    },
+    {
+      'id': 7,
+      'name': 'Android HttpUrlConnection'
+    },
+    {
+      'id': 8,
+      'name': 'Servlets'
+    },
+    {
+      'id': 9,
+      'name': 'JUnit Tests'
+    },
+    {
+      'id': 10,
+      'name': 'System Level Tests'
+    },
+    {
+      'id': 11,
+      'name': 'Use Case Diagrams'
+    },
+    {
+      'id': 12,
+      'name': 'Use Case Documents'
+    },
+    {
+      'id': 13,
+      'name': 'State Diagrams'
+    },
+    {
+      'id': 14,
+      'name': 'Sequence Diagrams'
+    }
+  ],
+  'students': [
+    {
+      'firstname': 'Bryce',
+      'lastname': 'Blauser',
+      'assignments':[3, 6]
+    },
+    {
+      'firstname': 'Zac',
+      'lastname': 'Allen', 
+      'assignments':[1, 11, 12]
+    },
+    {
+      'firstname': 'Dan',
+      'lastname': 'Crosby', 
+      'assignments':[2, 8]
+    },
+    {
+      'firstname': 'John',
+      'lastname': 'Sirrine', 
+      'assignments':[4, 7, 13]
+    },
+    {
+      'firstname': 'Brett',
+      'lastname': 'Yance', 
+      'assignments':[5, 14]
+    },
+    {
+      'firstname': 'Bryan',
+      'lastname': 'Anderson', 
+      'assignments':[9, 10]
+    }
+  ]
+}
