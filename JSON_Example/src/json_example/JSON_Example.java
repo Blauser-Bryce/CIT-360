@@ -65,7 +65,7 @@ public class JSON_Example {
             System.out.println("JSON IN: "+jsonString);
             
             Date exampleDate = new Date();
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
             Map<String, String> map = new HashMap<>();
             map.put("name", "Test McTesterson");
