@@ -69,7 +69,7 @@ public class JSON_Example {
 
             Map<String, String> map = new HashMap<>();
             map.put("name", "Test McTesterson");
-            map.put("age","0");
+            map.put("age","5");
             map.put("birthdate",  dateFormat.format(exampleDate));
             
             jsonOut.writeObject((Serializable) map);
