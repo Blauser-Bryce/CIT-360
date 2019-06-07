@@ -66,6 +66,10 @@ public class ApplicationController_Example {
         return user;
     }
 
+    public static Number getNumber() {
+        return number;
+    }
+    
     public static void setUser(User user) {
         ApplicationController_Example.user = user;
     }

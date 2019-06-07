@@ -23,17 +23,16 @@ public class ViewStartProgram extends View {
 
     public void displayBanner() {
       console.println(
-        "***************************************************************************************"
-      + "\n*This is just a simple MVC example showing how the models, views and controllers      *"
-      + "\n*interact with each other                                                             *"
-      + "\n***************************************************************************************");
+        "****************************************************************************************"
+      + "\n*This is just a simple Application Controller example                                *"
+      + "\n**************************************************************************************");
     }
 
     @Override
     public boolean doAction(String value) {
-        //UserControl userControl = new UserControl();   
+        User user = new User();   
         
-        //userControl.checkEntry(value);
+        user.checkEntry(value);
         
         //////  HANDLE REQUEST
         
@@ -41,9 +40,9 @@ public class ViewStartProgram extends View {
     }
     
     public void displayNextView(String user) {
-        console.println("\n========================================="
-                         + "\n Welcome to the MVC example " + user
-                         + "\n=========================================");
+        console.println("\n=================================================================="
+                         + "\n Welcome to the Application Controller example " + user
+                         + "\n===============================================================");
        
         // Create MainMenu object
         ViewMainMenu mainMenuView = new ViewMainMenu();

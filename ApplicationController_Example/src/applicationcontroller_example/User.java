@@ -24,4 +24,42 @@ public class User {
         this.name = name;
         ApplicationController_Example.setUser(this); // set the user
     }    
+    
+    public boolean checkEntry (String value){
+        
+        ViewStartProgram view = new ViewStartProgram();
+        
+        if (value.length() < 2) {
+            view.displayResult("\nInvalid user name:"
+                    + "The name must be greater than one character in length");
+            return false;
+        }
+        
+        // call createUser() control function
+        if (this.createUser(value) == null) { // if unsuccessful
+            view.displayResult("\nError creating user.");
+            return false;
+        }
+                
+        // display next view
+        view.displayNextView(this.getUserName());
+        return true;
+    }
+    
+    public static User createUser(String name) {
+        
+        if (name == null) {
+            return null;
+        }
+        
+        User user = new User();
+        user.setName(name);
+
+        return user;
+    }
+    
+    public static String getUserName() {
+        User user = new User();
+        return user.getName();
+    }
 }

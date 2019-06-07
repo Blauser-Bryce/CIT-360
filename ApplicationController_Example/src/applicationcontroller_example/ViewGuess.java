@@ -23,12 +23,11 @@ public class ViewGuess extends View {
     @Override
     public boolean doAction(String choice) {
         
-        // NumberControl numberControl = new NumberControl();
+        choice = choice.toUpperCase(); // convert to upper
         
-        // numberControl.guessNumber(choice);
-        
-        //////  HANDLE REQUEST
-        
+        Number number = new Number();
+        displayResult(number.guessNumber(choice));
+
         return false;
     }
     
